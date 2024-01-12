@@ -1,10 +1,11 @@
-import './App.css';
-import Search from './Components/GoogleSearchBa';
+import Search from './Components/GoogleSearchBar';
+import SoundEffects from './Components/SoundEffects';
+
 function App() {
   return (
    <>
    <Search/>
-   
+   <SoundEffects/>
    
    </>
   );

@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
-import '../search.css'
+// import '../search.css'
 const GoogleSearchBar = () => {
     const [search, setSearch] = useState("")//stores the search query
     const handleSubmit = (e) =>{
