@@ -16,8 +16,14 @@ const RandomizedQuote = () => {
           (match, letter) => "'" + letter.toLowerCase()
         );
 
-        setQuote(formattedQuote);
-        setAuthor(data.author);
+        // Check if the quote is under 50 characters
+        if (formattedQuote.length <= 50) {
+          setQuote(formattedQuote);
+          setAuthor(data.author);
+        } else {
+          // If the quote is too long, fetch a new one
+          fetchRandomQuote();
+        }
       } catch (error) {
         console.error('Error fetching random quote:', error);
       }
@@ -29,8 +35,8 @@ const RandomizedQuote = () => {
   return (
     <div>
       <h2>Quote</h2>
-      <h3>{quote}</h3>
-      <p>-{author}</p>
+      {quote && <h3>{quote}</h3>}
+      {quote && <p>-{author}</p>}
     </div>
   );
 };

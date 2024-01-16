@@ -10,21 +10,13 @@ import './Styles/index.css';
 function App() {
   return (
     <>
-      <div className='navbar'>
-        <div className='weather-container'>
-          <Weather />
-        </div>
-        <div
-          className='quote-container'
-          style={{ marginLeft: 'auto', marginRight: '0' }}>
-          <RandomizedQuote className='randomized-quote' />
-        </div>
+      <div className='main-container'>
+        <h1 className='boogle-heading'>BOO-gle</h1>
+        <Search />
+        <SubMenu />
+        <Accordion />
       </div>
 
-      <h1 className='boogle-heading'>Google</h1>
-      <Search />
-      <SubMenu />
-      <Accordion />
       {/* <SoundComponent/> */}
 
       <footer className='app-footer'>

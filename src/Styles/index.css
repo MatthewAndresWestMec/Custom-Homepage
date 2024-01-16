@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: url('../assets/blob-scene-haikei\ \(1\).svg') no-repeat center center fixed;
+    background: url('../assets/real.svg') no-repeat center center fixed;
     background-size: cover;
 }
 a:visited {    color: inherit}
@@ -26,6 +26,9 @@ a:visited {    color: inherit}
 width: 100%;
 }
 
+.main-container{
+    margin-top:15vh
+}
 
 /* TABS STYLING */
 .tabs-container {
@@ -254,7 +257,6 @@ ul li {
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 2vh;
     color: white;
 }
 
@@ -263,8 +265,7 @@ ul li {
     flex: 1;
 }
 .quote-container{
-    position: relative;
-    float: right;
+margin-left: auto;
 }
 
 .content {

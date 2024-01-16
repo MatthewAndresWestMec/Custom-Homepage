@@ -20,7 +20,8 @@ const Weather = () => {
             const response = await fetch(apiUrl, {
               method: 'GET',
               headers: {
-                'X-RapidAPI-Key': '3ce699255emsh5917ed94f1ec752p1ac410jsneac84a4daee6',
+                'X-RapidAPI-Key':
+                  '3ce699255emsh5917ed94f1ec752p1ac410jsneac84a4daee6',
                 'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
               },
             });
@@ -31,7 +32,9 @@ const Weather = () => {
           },
           (error) => {
             console.error('Error getting geolocation:', error);
-            setError('Error getting geolocation. Please allow location access.');
+            setError(
+              'Error getting geolocation. Please allow location access.'
+            );
             setLoading(false);
           }
         );
@@ -47,14 +50,14 @@ const Weather = () => {
 
   return (
     <div>
-      <h2>Weather Information</h2>
+      <h2>Weather</h2>
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {weatherData && weatherData.location && (
         <div>
-          <p>Location: {weatherData.location.name}</p>
-          <p>Temperature: {weatherData.current.temp_f}°F</p>
-          <p>Condition: {weatherData.current.condition.text}</p>
+          <p>{weatherData.location.name}</p>
+          <p>{weatherData.current.temp_f}°F</p>
+          <p>{weatherData.current.condition.text} Outside</p>
         </div>
       )}
     </div>

@@ -1,5 +1,4 @@
 // Accordion.js
-
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -9,6 +8,8 @@ import {
   faFacebook,
   faGithub,
 } from '@fortawesome/free-brands-svg-icons';
+import Weather from './Weather';
+import RandomizedQuote from './RandomQuote';
 
 const Accordion = () => {
   const [openTab, setOpenTab] = useState(null);
@@ -66,16 +67,6 @@ const Accordion = () => {
               </a>
             ))}
           </div>
-        </div>
-      )}
-
-      <div
-        className={`accordion-header ${openTab === 'contact' ? 'open' : ''}`}
-        onClick={() => toggleAccordion('contact')}>
-        Contact Information
-      </div>
-      {openTab === 'contact' && (
-        <div className='accordion-content'>
           <p>Email: {contactInfo.email}</p>
           <p>
             LinkedIn:{' '}
@@ -86,6 +77,20 @@ const Accordion = () => {
               {contactInfo.linkedin}
             </a>
           </p>
+        </div>
+      )}
+
+      <div
+        className={`accordion-header ${
+          openTab === 'weatherAndQuotes' ? 'open' : ''
+        }`}
+        onClick={() => toggleAccordion('weatherAndQuotes')}>
+        Weather and Quotes
+      </div>
+      {openTab === 'weatherAndQuotes' && (
+        <div className='accordion-content'>
+          <Weather />
+          <RandomizedQuote />
         </div>
       )}
     </div>
