@@ -1,0 +1,272 @@
+body {
+   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url('../assets/blob-scene-haikei\ \(1\).svg') no-repeat center center fixed;
+    background-size: cover;
+}
+a:visited {    color: inherit}
+.boogle-heading {
+    font-size: 64px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.app-footer {
+    position: fixed;
+        bottom: 0;
+width: 100%;
+}
+
+
+/* TABS STYLING */
+.tabs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.tab {
+    color:white;
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.tab::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #EA5C1F;
+    transition: width 0.3s ease-in-out;
+}
+
+.tab:hover::before {
+    width: 100%;
+}
+
+/* Exclude hover effect for active tab */
+.tab.active:hover::before {
+    width: 0;
+}
+
+.active {
+    color:#EA5C1F;
+    border-bottom: 2px solid #EA5C1F;
+}
+
+.shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shortcut {
+    text-align: center;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.icon-circle {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #EA5C1F;
+    /* border: 0.1px solid rgba(213, 215, 214, 0.7); */
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.shortcut span {
+    display: block;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+
+    /* Add responsive styles here */
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab {
+        margin-bottom: 5px;
+    }
+}
+
+/* SEARCH BAR STYLING */
+
+.google-search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-search-control {
+    position: relative;
+}
+
+.search-icon {
+    color: black;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+input {
+    padding: 14px 40px 14px 60px;
+    border-radius: 10px;
+    width: 360px;
+    outline: none;
+    font-weight: bold;
+    color: black;
+    border: none;
+}
+
+input::placeholder {
+    outline: none;
+    color: black;
+    opacity: 0.6;
+}
+input:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    input {
+        width: 100%;
+    }
+}
+
+.accordion {
+    max-width: 20%;
+    margin: 0 auto;
+}
+
+.accordion-header {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+    border-radius: 5px;
+    background-color: #ddd;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.accordion-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #EA5C1F;
+    transition: width 0.3s ease-in-out;
+}
+
+.accordion-header:hover::before {
+    width: 100%;
+}
+
+.accordion-header.active {
+    color: #EA5C1F;
+    /* Set the active title color */
+}
+
+.accordion-header:hover {
+    color: #EA5C1F;
+    /* Set the hover title color */
+}
+
+.accordion-content {
+    display: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background: #333;
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.accordion-header.open+.accordion-content {
+    display: block;
+}
+
+.social-media-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media-links a {
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-media-links a:hover {
+    color: #4285f4;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .accordion-header {
+        margin-bottom: 5px;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh;
+    color: white;
+}
+
+.weather-container,
+.quote-container {
+    flex: 1;
+}
+.quote-container{
+    position: relative;
+    float: right;
+}
+
+.content {
+    padding-top: 15%;
+}

@@ -1,22 +1,33 @@
-import React from 'react'
-import {useState} from 'react'
-// import '../search.css'
-const GoogleSearchBar = () => {
-    const [search, setSearch] = useState("")//stores the search query
-    const handleSubmit = (e) =>{
-        e.preventDefault()//prevents rerender / refresh
-        window.open(`http://www.google.com/search?q=${search}`, "_blank"); // creates a new window with query string
-    }
-  return (
-    <>
-    <form onSubmit={handleSubmit} className="form">
-                <div className="form-control">
-                    <input type="text" name='search' id='search' onChange={(e)=> setSearch(e.target.value)} />
-                </div>
-                <button type='submit'>Search</button>
-            </form>
-    </>
-  )
-}
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-export default GoogleSearchBar
+const GoogleSearchBar = () => {
+  const [search, setSearch] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.open(`http://www.google.com/search?q=${search}`, '_blank');
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className='google-search-form'>
+      <div className='google-search-control'>
+        <FontAwesomeIcon
+          icon={faSearch}
+          className='search-icon'
+          onClick={handleSubmit}
+        />
+        <input
+          type='text'
+          name='search'
+          id='search'
+          placeholder='Search Google or Type a URL'
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+    </form>
+  );
+};
+
+export default GoogleSearchBar;

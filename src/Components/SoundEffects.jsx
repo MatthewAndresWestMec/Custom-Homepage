@@ -1,40 +1,48 @@
-import React from 'react'
-const SoundEffects = () => {
+// SoundComponent.js
 
-    
-    const SFX = (state) => {
-// sep function
-        if (state) {
-            console.log('true')
-      setTimeout(
-                console.log('sfx')
-                // SFX.play()
-                ,1000)
-        } else {
-            console.log('false')
-            clearTimeout(this.timeoutID);
-        }
+import React, { useState } from 'react';
+import { Howl } from 'howler';
+import hoverSound from '../assets/hover.mp3';
+import clickSound from '../assets/click.mp3';
+
+const SoundComponent = () => {
+  const [hoverTimeout, setHoverTimeout] = useState(null);
+
+  const playHover = () => {
+    // Clear existing timeout (if any)
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
     }
-    // const [backgroundColor, setBackgroundColor] = useState('#f44');
+    const timeout = setTimeout(() => {
+      const sound = new Howl({
+        src: [hoverSound],
+        volume: 0.5,
+      });
+      sound.play();
+    }, 100);
+    setHoverTimeout(timeout);
+  };
 
-    // const triggerSFX = document.getElementsByClassName("TriggerSFX")
-    // console.log(triggerSFX)
-    // triggerSFX.addEventListener("mouseover", () => {
-    //     // SFX.play();
-    //     setBackgroundColor('#1111')
-    // });
-    // triggerSFX.addEventListener("mouseleave", () => {
-    //     // SFX.pause();
-    //     // SFX.currentTime = 0;
-    //     setBackgroundColor('#f44')
-    // });
+  const playClick = () => {
+    const sound = new Howl({
+      src: [clickSound],
+    });
+    sound.play();
+  };
 
-    return (
-        <>
-            <div onMouseEnter={() => SFX(true)}
-                onMouseLeave={() => SFX(false)} >AAAAAAAAAAAAA</div>
-        </>
-    )
-}
+  return (
+    <div>
+      {/* Elements with hover effect */}
+      <div className="hover-element" onMouseEnter={playHover} onMouseLeave={() => clearTimeout(hoverTimeout)}>
+        Hover me for a hover sound!
+      </div>
 
-export default SoundEffects;
+      {/* Elements with click effect */}
+      <div className="click-element" onClick={playClick}>
+        Click me for a click sound!
+      </div>
+    </div>
+  );
+};
+
+export default SoundComponent;

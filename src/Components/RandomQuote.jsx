@@ -9,8 +9,15 @@ const RandomizedQuote = () => {
       try {
         const response = await fetch('https://dummyjson.com/quotes/random');
         const data = await response.json();
-        setQuote(data.quote);
-        setAuthor(data.author);;
+
+        // Convert the letter after an apostrophe to lowercase
+        const formattedQuote = data.quote.replace(
+          /'([A-Z])/,
+          (match, letter) => "'" + letter.toLowerCase()
+        );
+
+        setQuote(formattedQuote);
+        setAuthor(data.author);
       } catch (error) {
         console.error('Error fetching random quote:', error);
       }
@@ -21,9 +28,9 @@ const RandomizedQuote = () => {
 
   return (
     <div>
-      <h2>Random Quote</h2>
+      <h2>Quote</h2>
       <h3>{quote}</h3>
-      <p>{author}</p>
+      <p>-{author}</p>
     </div>
   );
 };
