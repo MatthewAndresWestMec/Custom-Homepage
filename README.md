@@ -3,7 +3,7 @@ Use `npm start` to start my custom, Halloween-themed 'Google' tab.
 
 # Author
 
-Project Made By [Matthew Andres]([https://facebook.github.io/create-react-app/docs/running-tests](https://github.com/MatthewAndresWestMec))
+Project Made By [Matthew Andres](https://github.com/MatthewAndresWestMec)
 
 ## Available Scripts
 
