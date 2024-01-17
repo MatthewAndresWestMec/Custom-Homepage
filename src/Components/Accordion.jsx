@@ -10,12 +10,20 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import Weather from './Weather';
 import RandomizedQuote from './RandomQuote';
-
+import { Howl } from 'howler';
+import clickSound from '../assets/click.mp3';
 const Accordion = () => {
+  const playClick = () => {
+    const sound = new Howl({
+      src: [clickSound],
+    });
+    sound.play();
+  };
   const [openTab, setOpenTab] = useState(null);
 
   const toggleAccordion = (tab) => {
     setOpenTab(openTab === tab ? null : tab);
+    playClick();
   };
 
   const randomAboutMe =
@@ -31,7 +39,7 @@ const Accordion = () => {
 
   const contactInfo = {
     email: 'janedoe@example.com',
-    linkedin: 'https://www.linkedin.com/in/janedoe',
+    linkedin: 'https://www.linkedin.com/in/a',
   };
 
   return (

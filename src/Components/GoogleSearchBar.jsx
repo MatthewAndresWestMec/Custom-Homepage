@@ -22,7 +22,7 @@ const GoogleSearchBar = () => {
           type='text'
           name='search'
           id='search'
-          placeholder='Search Google or Type a URL'
+          placeholder='Search BOO-gle'
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>

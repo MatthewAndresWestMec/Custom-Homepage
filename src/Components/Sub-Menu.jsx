@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Howl } from 'howler';
+import clickSound from '../assets/click.mp3';
 import {
   faEnvelope,
   faSearch,
@@ -19,6 +21,13 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 const TabsComponent = () => {
+  const playClick = () => {
+    const sound = new Howl({
+      src: [clickSound],
+    });
+    sound.play();
+  };
+
   const [activeTab, setActiveTab] = useState('Google');
   const [shortcuts, setShortcuts] = useState({
     Google: [
@@ -70,6 +79,7 @@ const TabsComponent = () => {
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
+    playClick();
   };
 
   return (
@@ -96,7 +106,7 @@ const TabsComponent = () => {
             <div className='icon-circle'>
               <FontAwesomeIcon icon={shortcut.icon} />
             </div>
-            <span>{shortcut.name}</span>
+            <span className='shortcutName'>{shortcut.name}</span>
           </a>
         ))}
       </div>

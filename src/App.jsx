@@ -1,7 +1,5 @@
 import Search from './Components/GoogleSearchBar';
 // import SoundComponent from './Components/SoundEffects';
-import RandomizedQuote from './Components/RandomQuote';
-import Weather from './Components/Weather';
 import SubMenu from './Components/Sub-Menu';
 import Accordion from './Components/Accordion';
 import Music from './Components/Music';
@@ -17,7 +15,7 @@ function App() {
         <Accordion />
       </div>
 
-      {/* <SoundComponent/> */}
+      {/* <SoundComponent /> */}
 
       <footer className='app-footer'>
         <Music className='music' />
