@@ -29,7 +29,7 @@ const TabsComponent = () => {
   };
 
   const [activeTab, setActiveTab] = useState('Google');
-  const [shortcuts, setShortcuts] = useState({
+  const [shortcuts] = useState({
     Google: [
       { name: 'Gmail', icon: faEnvelope, link: 'https://mail.google.com/' },
       {
