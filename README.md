@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Custom Home-Page
+Use `npm start` to start my custom, Halloween-themed 'Google' tab.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Author
+
+Project Made By [Matthew Andres]([https://facebook.github.io/create-react-app/docs/running-tests](https://github.com/MatthewAndresWestMec))
 
 ## Available Scripts
 
