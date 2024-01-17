@@ -9,6 +9,7 @@ const Music = () => {
           position: 'relative',
         }}>
         <iframe
+          title='MUSIC PLAYER'
           src='https://open.spotify.com/embed/playlist/0SpLsgmXLmPGFVhSfb1AdM?utm_source=oembed'
           style={{
             top: 0,
